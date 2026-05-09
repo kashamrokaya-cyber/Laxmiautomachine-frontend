@@ -30,7 +30,7 @@ const Hero = () => {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} 
               className='text-white'
             >
-              Tanka Raj
+              Tanka Raj Bam
             </motion.span>
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
@@ -63,9 +63,9 @@ const Hero = () => {
 
       {/* Floating element for tech feel */}
       <motion.div
-        animate={{ y: [0, -20, 0] }}
+        animate={{ y: [0, -10, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-50 hidden md:block"
+        className="absolute bottom-15 left-1/2 -translate-x-1/2 text-white opacity-50 hidden md:block"
       >
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
           <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
