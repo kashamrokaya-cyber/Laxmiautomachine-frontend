@@ -40,6 +40,7 @@ const Hero = () => {
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
             Fast, reliable, and professional repair services for all types of office equipments and note counting machines across Nepal.
           </p>
+          
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
