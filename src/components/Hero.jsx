@@ -34,8 +34,8 @@ const Hero = () => {
             </motion.span>
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-            Professional Counting <br />
-            <span className="text-blue-500">Machine Repair</span> Services For currency counting machine, printers and security system 
+            Professional  <br />
+            <span className="text-blue-500"></span> Services For currency counting machine, printers and security system 
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
             Fast, reliable, and professional repair services for all types of office equipments and note counting machines across Nepal.
