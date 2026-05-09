@@ -35,12 +35,12 @@ const Hero = () => {
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
             Professional  <br />
-            <span className="text-blue-500"></span> Services For currency counting machine, printers and security system 
+            <span className="text-blue-500">Services For</span>  currency counting machine, printers and security system 
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
             Fast, reliable, and professional repair services for all types of office equipments and note counting machines across Nepal.
           </p>
-          
+
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
