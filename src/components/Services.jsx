@@ -16,8 +16,8 @@ import {
 
 const services = [
   {
-    title: 'Currency Counting Machine Repair',
-    description: 'Expert repair for all brands of note counting machines. We fix sensors, motors, and displays.',
+    title: 'Currency Counting Machine & Money Detector  Repair',
+    description: 'Expert repair for all brands of note counting machines. We fix sensors, motors, and displays andSpecialized maintenance for UV, MG, and IR fake note detectors to ensure maximum accuracy',
     icon: <Calculator className="w-8 h-8" />,
     color: 'bg-blue-500'
   },
@@ -28,7 +28,7 @@ const services = [
     color: 'bg-cyan-500'
   },
   {
-    title: 'Machine Maintenance',
+    title: 'CCTV camera & security system',
     description: 'Regular cleaning and calibration to extend the life of your equipment and prevent breakdowns.',
     icon: <Wrench className="w-8 h-8" />,
     color: 'bg-indigo-500'
