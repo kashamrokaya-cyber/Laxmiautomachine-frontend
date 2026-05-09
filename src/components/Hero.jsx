@@ -30,7 +30,7 @@ const Hero = () => {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} 
               className='text-white'
             >
-              Tanka Raj Bam
+              Tanka Raj 
             </motion.span>
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
