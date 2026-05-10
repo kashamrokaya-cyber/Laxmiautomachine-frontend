@@ -107,7 +107,7 @@ const Pricing = () => {
               </div>
 
               <button 
-                onClick={() => navigate('/contact', { state: { planName: plan.name } })}
+                onClick={() => navigate('/book', { state: { planName: plan.name } })}
                 className='bg-blue-600 w-full py-4 rounded-xl font-bold transition-all text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30'
               >
                 Choose Plan

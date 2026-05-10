@@ -1,11 +1,13 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
 import printing from '../servicesimages/printmoney.jpeg';
 import camera from '../servicesimages/camera.jpeg';
 import countingmachine from '../servicesimages/countingmachine.jpeg';
 import spareparts from '../servicesimages/spareparts.jpg';
 import onsite from '../servicesimages/onsite.jpg';
 import packages from '../servicesimages/packages.jpg';
+import printerscanner from '../servicesimages/printerscanner.jpg';
+import laptopcomputer from '../servicesimages/laptopcomputer.jpg';
 
 import {
   ShieldCheck,
@@ -27,6 +29,17 @@ const services = [
     description: 'Specialized maintenance for UV, MG, and IR fake note detectors to ensure maximum accuracy.',
     icon: printing,
     color: 'bg-cyan-500'
+  },
+  {
+    title: 'Printer and Scanner',
+    description: "Reliable printer and scanner repair, sales, and maintenance services at affordable prices.",
+    icon: printerscanner,
+    color: "bg-sky-500"
+  }, {
+    title: 'Laptop and Computer',
+    description: "Comprehensive laptop and computer repair services, including hardware and software solutions.",
+    icon: laptopcomputer,
+    color: "bg-slate-500"
   },
   {
     title: 'CCTV camera  security system',

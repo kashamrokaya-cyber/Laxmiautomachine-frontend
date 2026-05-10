@@ -51,7 +51,7 @@ const Hero = () => {
               <ChevronRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              to="/contact"
+              to="/book"
               className="w-full sm:w-auto px-8 py-4 glass text-white rounded-xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2"
             >
               <Phone className="w-5 h-5" />

@@ -23,6 +23,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     { name: 'Gallery', to: '/gallery' },
     { name: 'Banks', to: '/serviced-banks' },
     { name: 'Upcoming', to: '/upcoming' },
+    { name: 'Contact', to: '/contact' },
   
   ];
 
@@ -74,7 +75,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-slate-700" />}
             </button>
             <Link
-              to="/contact"
+              to="/book"
               className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30"
             >
               Book Service
@@ -82,7 +83,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="md:hidden flex items-center gap-6">
             <button onClick={toggleDarkMode}>
               {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-slate-700" />}
             </button>
@@ -120,7 +121,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 </NavLink>
               ))}
               <Link
-                to="/contact"
+                to="/book"
                 onClick={() => setIsOpen(false)}
                 className="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium text-center"
               >
