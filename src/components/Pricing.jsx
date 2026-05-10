@@ -1,36 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const plans = [
   {
     name: 'Basic Repair',
-    price: 'Rs. 500 to 1500',
-    period: 'starting from',
+    price: 'Rs. 500 to 1000',
+    period: 'per visit',
     features: [
       'Basic Cleaning',
       'Sensor Calibration',
       'Software Update',
-      '30-Day Warranty'
+      '30-days warranty',
+      'Checking of spare parts',
+      'Free pick-up and drop-off service',
+      'On-site Service'
+
     ],
     notIncluded: [
-      'Spare Parts',
-      'On-site Service',
+
       'Priority Support'
     ],
     recommended: false
   },
   {
     name: 'Standard Maintenance',
-    price: 'Rs. 1500 to 2,500',
-    period: 'per visit',
+    price: 'Rs. 1000 to 2,500',
+    period: 'per month',
     features: [
       'Deep Internal Cleaning',
       'Full Calibration',
       'Genuine Parts Replacement',
-      '90-Day Warranty',
+      '60-Day Warranty',
       'On-site Service'
     ],
+
     notIncluded: [
       'Priority Support',
       'Replacement Machine'
@@ -39,7 +44,7 @@ const plans = [
   },
   {
     name: 'Annual Package',
-    price: 'Rs. 2500 to 15,000',
+    price: 'Up to 20,000',
     period: 'per year',
     features: [
       'Unlimited Repairs',
@@ -47,13 +52,15 @@ const plans = [
       'Priority Support',
       'On-site Services',
       '1-Year Warranty'
-   ],
+    ],
     notIncluded: [],
     recommended: false
   }
 ];
 
 const Pricing = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="pricing" className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,9 +77,8 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border ${
-                plan.recommended ? 'border-blue-500 scale-105 z-10' : 'border-slate-100 dark:border-slate-700'
-              }`}
+              className={`relative bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border ${plan.recommended ? 'border-blue-500 scale-105 z-10' : 'border-slate-100 dark:border-slate-700'
+                }`}
             >
               {plan.recommended && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
@@ -100,11 +106,10 @@ const Pricing = () => {
                 ))}
               </div>
 
-              <button className={`w-full py-4 rounded-xl font-bold transition-all ${
-                plan.recommended 
-                ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30' 
-                : 'bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-600'
-              }`}>
+              <button 
+                onClick={() => navigate('/contact', { state: { planName: plan.name } })}
+                className='bg-blue-600 w-full py-4 rounded-xl font-bold transition-all text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30'
+              >
                 Choose Plan
               </button>
             </motion.div>

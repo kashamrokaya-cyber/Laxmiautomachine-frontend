@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 const BookingForm = () => {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,6 +15,21 @@ const BookingForm = () => {
     brand: '',
     serviceType: 'Repair Service'
   });
+
+  useEffect(() => {
+    if (location.state && location.state.planName) {
+      const planToServiceMap = {
+        'Basic Repair': 'Basic Service',
+        'Standard Maintenance': 'Standard Maintenance package',
+        'Annual Package': 'Annual Package'
+      };
+
+      const selectedService = planToServiceMap[location.state.planName];
+      if (selectedService) {
+        setFormData(prev => ({ ...prev, serviceType: selectedService }));
+      }
+    }
+  }, [location.state]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -134,18 +151,18 @@ const BookingForm = () => {
               onChange={(e) => setFormData({...formData, serviceType: e.target.value})}
             >
               <option>Purchase of New Machine </option>
-              <option>Repair Service</option>
-              <option>Spare Parts</option>
-              <option>AMC Package</option>
+              <option>Basic Service</option>
+              <option>Standard Maintenance package</option>
+              <option>Annual Package</option>
             </select>
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Machine Problem *</label>
+          <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Description *</label>
           <textarea
             rows="3"
             required
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none  transition-all"
             placeholder="Describe the issue..."
             value={formData.problem}
             onChange={(e) => setFormData({...formData, problem: e.target.value})}
