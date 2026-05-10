@@ -1,17 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import gallery1 from '../assets/gallery_1.png';
-import gallery2 from '../assets/gallery_2.png';
-import gallery3 from '../assets/gallery_3.png';
-import download from '../assets/download.jpg'
-import buildingHome from '../assets/buildingHome.jpg'
-
+import gallery1 from '../assets/gallery10.jpeg';
+import gallery2 from '../assets/gallery11.jpeg';
+import gallery3 from '../assets/gallery12.jpeg';
+import gallery4 from '../assets/gallery13.jpeg'
+import gallery5 from '../assets/gallery14.jpeg'
+import gallery6 from '../assets/gallery15.jpeg'
+import gallery7 from '../assets/gallery16.jpeg'
+import gallery8 from '../assets/gallery17.jpeg'
+import gallery9 from '../assets/gallery18.jpeg'
 const images = [
   gallery1,
   gallery2,
   gallery3,
-  download,
-  buildingHome
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
 ];
 
 

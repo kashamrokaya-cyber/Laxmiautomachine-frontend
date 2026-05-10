@@ -8,12 +8,6 @@ import onsite from '../servicesimages/onsite.jpg';
 import packages from '../servicesimages/packages.jpg';
 
 import {
-  Calculator,
-  Search,
-  Wrench,
-  Cpu,
-  Home,
-  Calendar,
   ShieldCheck,
   Zap,
   UserCheck,
