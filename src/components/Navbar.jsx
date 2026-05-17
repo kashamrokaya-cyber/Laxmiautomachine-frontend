@@ -32,15 +32,14 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isOpen ? 'py-2 glass shadow-lg' : 'py-4 bg-transparent'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="bg-blue-400  rounded-full">
-              <img className='w-10 h-10 rounded-full' src={logo} alt="Logo" />
-              
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+            <div className="bg-blue-400 rounded-full flex-shrink-0">
+              <img className="w-10 h-10 rounded-full object-cover flex-shrink-0" src={logo} alt="Logo" />
             </div>
-            <span className={`text-xl font-bold ${scrolled || darkMode || isOpen ? 'text-white' : 'text-slate-900'}`}>
-              Laxmi<span className="text-blue-600">AutoMachineTraders</span>
+            <span className={`text-lg sm:text-xl font-bold whitespace-nowrap flex-shrink-0 ${darkMode ? 'text-white' : 'text-slate-900'}`}>
+              Laxmi<span className="text-blue-600">AutoMachine</span><span className="text-blue-600 hidden sm:inline">Traders</span>
             </span>
           </Link>
 
@@ -51,7 +50,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `relative cursor-pointer transition-colors ${isActive ? 'text-blue-600 font-bold' : (scrolled || darkMode ? 'text-white/80 hover:text-white' : 'text-slate-700 hover:text-blue-600')
+                  `relative cursor-pointer transition-colors ${isActive ? 'text-blue-600 font-bold' : (darkMode ? 'text-white/80 hover:text-white' : 'text-slate-700 hover:text-blue-600')
                   }`
                 }
               >
@@ -83,13 +82,13 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-6">
-            <button onClick={toggleDarkMode}>
+          <div className="md:hidden flex items-center gap-4 flex-shrink-0">
+            <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-white/10 transition-colors">
               {darkMode ? <Sun className="text-yellow-400" /> : <Moon className="text-slate-700" />}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={scrolled || darkMode || isOpen ? 'text-white' : 'text-slate-900'}
+              className={`p-2 rounded-full hover:bg-white/10 transition-colors ${darkMode ? 'text-white' : 'text-slate-900'}`}
             >
               {isOpen ? <X /> : <Menu />}
             </button>
@@ -113,7 +112,10 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                   to={link.to}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `text-lg transition-colors ${isActive ? 'text-blue-400 font-bold' : 'text-white hover:text-blue-400'
+                    `text-lg transition-colors ${
+                      isActive 
+                        ? 'text-blue-600 dark:text-blue-400 font-bold' 
+                        : (darkMode ? 'text-white hover:text-blue-400' : 'text-slate-800 hover:text-blue-600')
                     }`
                   }
                 >
